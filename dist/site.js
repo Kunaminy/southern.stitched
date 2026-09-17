@@ -143,7 +143,12 @@ if (customOrderForm) {
   });
 
   customOrderForm.addEventListener('submit', () => {
+    customOrderForm.method = 'post';
+    customOrderForm.setAttribute('method', 'post');
+    customOrderForm.enctype = 'application/x-www-form-urlencoded';
     const submitButton = customOrderForm.querySelector('.order-submit');
+    submitButton.formMethod = 'post';
+    submitButton.setAttribute('formmethod', 'post');
     submitButton.disabled = true;
     submitButton.textContent = 'sending request…';
   });
